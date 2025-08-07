@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# 🚀 To-Do List App - React.js & Tailwind CSS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, offline-first To-Do List application built with React.js and styled using Tailwind CSS v3. This project serves as a prototype for Business Process Management (BPM) integration, focusing on robust task management, intuitive UI/UX, and readiness for future API integrations.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+### 1. Task Management (CRUD)
+-   **Create**: Add new tasks with validation.
+-   **Read**: Display tasks with filtering, search, and sorting.
+-   **Update**: Edit tasks (inline or via modal).
+-   **Delete**: Remove tasks with confirmation.
 
-### `npm start`
+### 2. Task Status System
+-   Toggle task completion status with visual feedback (checkbox, strike-through, color changes).
+-   Progress indicators for completion percentage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Categorization System
+-   CRUD operations for task categories.
+-   Color-coded categories with optional icon support.
+-   Default categories: Personal, Work, Shopping, Health, Study.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. Advanced Filtering & Search
+-   **Status Filters**: All, Active, Completed.
+-   **Category Filters**: Multi-select dropdown.
+-   **Text Search**: Real-time search with highlighting.
+-   **Priority Filter**: Filter tasks by High, Medium, Low priority.
+-   **Date Filters**: Today, This Week, This Month, Custom Range (planned).
+-   Combined filters and clear all filters option.
 
-### `npm test`
+### 5. Data Persistence & API Readiness
+-   Offline storage using LocalStorage.
+-   Export/Import functionality (JSON format).
+-   API service layer ready for REST API integration.
+-   Robust loading states and error handling.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 6. Bonus Features
+-   **Drag & Drop**: Reorder tasks with smooth animations using `@dnd-kit/core`. Drag handle implemented for precise control.
+-   **Bulk Operations**: Multi-select tasks for bulk actions (Delete, Mark as Complete, Change Category, Change Priority).
+-   **Data Visualization**: Productivity charts, category distribution, priority statistics, and trend charts using Chart.js.
 
-### `npm run build`
+## 🛠️ Technology Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   **Frontend**: React 18+ (JavaScript ES6+)
+-   **Styling**: Tailwind CSS v3
+-   **State Management**: Redux Toolkit + Redux-Saga
+-   **HTTP Client**: Axios (for public API integration)
+-   **Storage**: LocalStorage (offline-first)
+-   **Build Tool**: Vite
+-   **Drag & Drop**: `@dnd-kit/core`
+-   **Charts**: Chart.js
+-   **Validation**: Custom validators
+-   **UUID Generation**: `uuid` library
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎨 UI/UX Design Principles
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   **Design System**: Modern, clean, minimalist.
+-   **Color Scheme**: Professional with accent colors for categories.
+-   **Typography**: Readable font hierarchy.
+-   **Spacing**: Consistent spacing using Tailwind's scale.
+-   **Animations**: Subtle micro-interactions.
+-   **Responsive Design**: Mobile-first approach, optimized for all screen sizes (320px+).
+-   **Accessibility**: ARIA labels, keyboard navigation, clear focus indicators, WCAG AA color contrast.
 
-### `npm run eject`
+## 📂 Component Architecture
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src/
+├── components/
+│   ├── common/ (Button, Input, Modal, LoadingSpinner, ConfirmDialog)
+│   ├── todo/ (TodoItem, TodoForm, TodoList, TodoStats, DraggableTodoItem)
+│   ├── filters/ (SearchBar, StatusFilter, CategoryFilter, PriorityFilter, BulkActions)
+│   ├── charts/ (ProductivityChart, CategoryChart, PriorityChart, TrendChart)
+│   ├── widgets/ (WeatherWidget, QuoteWidget, StatsWidget)
+│   └── layout/ (Header, Sidebar, Footer)
+├── store/ (slices, sagas, store.js)
+├── services/ (todoService, categoryService, storageService, weatherService, quoteService, jsonPlaceholderService)
+├── types/ (todoTypes, categoryTypes, commonTypes)
+├── utils/ (dateHelpers, validators, constants, dummyData)
+└── hooks/ (useTodos, useCategories, useFilters, useDragDrop, useBulkActions, useWeather, useQuote)
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌐 Public API Integrations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   **Weather Service**: Integrates with OpenWeatherMap API to display current weather (e.g., for Malang).
+-   **Quote Service**: Fetches daily motivational quotes from `api.quotable.io`.
+-   **JSONPlaceholder Service**: Provides sample todo data for initial setup.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd todo-list-app
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the Application
 
-### Code Splitting
+```bash
+npm run dev
+```
+The application will typically run on `http://localhost:5173` (or another port if 5173 is in use).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📸 Screenshots
 
-### Analyzing the Bundle Size
+Here are some screenshots of the application's main views. Please replace these placeholder images with actual screenshots from your running application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Tasks View
+![Tasks View](https://via.placeholder.com/1200x600?text=Tasks+View+Screenshot)
+_This view displays all your tasks, with options for filtering, searching, and bulk actions. Each task item is draggable via its handle._
 
-### Making a Progressive Web App
+### Categories View
+![Categories View](https://via.placeholder.com/1200x600?text=Categories+View+Screenshot)
+_Manage your task categories here. You can add, edit, or delete categories, each with a unique color and optional icon._
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Charts View
+![Charts View](https://via.placeholder.com/1200x600?text=Charts+View+Screenshot)
+_Visualize your productivity and task distribution with various charts, including productivity trends, category breakdown, and priority statistics._
 
-### Advanced Configuration
+### Widgets View
+![Widgets View](https://via.placeholder.com/1200x600?text=Widgets+View+Screenshot)
+_A dashboard of useful widgets, including current weather, daily motivational quotes, and overall task statistics._
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contributing
 
-### Deployment
+Feel free to fork the repository and contribute!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
