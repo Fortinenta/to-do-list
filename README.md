@@ -111,19 +111,19 @@ The application will typically run on `http://localhost:5173` (or another port i
 Here are some screenshots of the application's main views. Please replace these placeholder images with actual screenshots from your running application.
 
 ### Tasks View
-![Tasks View](https://via.placeholder.com/1200x600?text=Tasks+View+Screenshot)
+![Tasks View](public/main.png)
 _This view displays all your tasks, with options for filtering, searching, and bulk actions. Each task item is draggable via its handle._
 
 ### Categories View
-![Categories View](https://via.placeholder.com/1200x600?text=Categories+View+Screenshot)
+![Categories View](public/categories.png)
 _Manage your task categories here. You can add, edit, or delete categories, each with a unique color and optional icon._
 
 ### Charts View
-![Charts View](https://via.placeholder.com/1200x600?text=Charts+View+Screenshot)
+![Charts View](public/charts.png)
 _Visualize your productivity and task distribution with various charts, including productivity trends, category breakdown, and priority statistics._
 
 ### Widgets View
-![Widgets View](https://via.placeholder.com/1200x600?text=Widgets+View+Screenshot)
+![Widgets View](public/widgets.png)
 _A dashboard of useful widgets, including current weather, daily motivational quotes, and overall task statistics._
 
 ## 🤝 Contributing
